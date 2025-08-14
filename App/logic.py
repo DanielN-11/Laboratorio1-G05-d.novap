@@ -135,6 +135,7 @@ def load_books_tags(catalog, filename):
     :returns: Tamaño del conjunto de tags de los libros
     :rtype: int
     """
+    #El error estaba en la mayúscula a la hora de llamar a los tags de los libros, estaba como "Book_tags" y era "book_tags"
     book_tags = catalog.get("book_tags")
     book_tags_file = os.path.join(data_dir, filename)
     catalog["book_tags"] = set.load_set(book_tags, book_tags_file)
